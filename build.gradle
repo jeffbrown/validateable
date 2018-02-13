@@ -7,6 +7,26 @@ repositories {
 
 dependencies {
     compile 'org.codehaus.groovy:groovy:2.4.13'
-    compile 'org.grails:grails-plugin-validation:3.3.2'
+    compile ('org.grails:grails-plugin-validation:3.3.2') {
+        exclude module: 'spring-boot'
+        exclude module: 'spring-core'
+        exclude module: 'spring-tx'
+        exclude module: 'spring-web'
+        exclude module: 'hibernate-jpa-2.1-api'
+        exclude module: 'concurrentlinkedhashmap-lru'
+        exclude module: 'grails-web-common'
+        exclude module: 'grails-web-url-mappings'
+        exclude module: 'grails-web-sitemesh'
+        exclude module: 'grails-plugin-domain-class'
+        exclude module: 'grails-taglib'
+        exclude module: 'grails-web-taglib'
+        exclude module: 'grails-web'
+    }
+    compile('org.grails:grails-datastore-gorm:6.1.8.RELEASE') {
+        exclude module: 'concurrentlinkedhashmap-lru'
+        exclude module: 'spring-beans'
+        exclude module: 'spring-tx'
+        exclude module: 'spring-context'
+    }
     testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
 }
