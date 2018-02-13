@@ -1,0 +1,12 @@
+apply plugin: 'groovy'
+
+repositories {
+    jcenter()
+    maven { url "https://repo.grails.org/grails/core" }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy:2.4.13'
+    compile 'org.grails:grails-plugin-validation:3.3.2'
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+}
